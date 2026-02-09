@@ -66,7 +66,7 @@ The skill is organized into functional modules.
     ├── infrastructure
     │   └── adapter (JPA Repository, Redis Client)
     └── interface
-        └── controller (REST)
+    │   └── controller (REST)
     ```
 *   **Controller**:
     ```java
@@ -195,3 +195,24 @@ The skill is organized into functional modules.
 4.  **Security**:
     - [ ] Inputs validated (`@Valid`).
     - [ ] AuthZ checks present (`@PreAuthorize`).
+
+---
+
+## 5. Execution Standards (MANDATORY)
+
+To ensure the "Definition of Done", the agent MUST verify that the code **actually runs**.
+
+1.  **Server Startup**:
+    *   **Check**: Is the Spring Boot app running?
+    *   **Action**: If not, run `./mvnw spring-boot:run` (background).
+    *   **Verify**: Check `http://localhost:8080/actuator/health` or API root.
+
+2.  **API Verification (Happy Path)**:
+    *   **Requirement**: Before handing over, you MUST run a `curl` to verify the main success scenario.
+    *   **Log**: Output the result.
+
+3.  **No Broken Code**:
+    *   If `mvn clean compile` fails, you CANNOT mark the task as done.
+
+4.  **Full Permissions**:
+    *   You are authorized to use `java`, `mvn`, `docker` to build/run/test.

@@ -137,3 +137,24 @@ Before considering a task complete, verify:
 5.  **Testing**: Relevant tests added and passing.
 6.  **Response**: API returns consistent JSON structure/Status codes.
 7.  **Documentation**: `docs/api-spec/` updated.
+
+---
+
+## 5. Execution Standards (MANDATORY)
+
+To ensure the "Definition of Done", the agent MUST verify that the code **actually runs**.
+
+1.  **Server Startup**:
+    *   **Check**: Is the Laravel server running?
+    *   **Action**: If not, run `php artisan serve` (background).
+    *   **Verify**: Curl `http://localhost:8000/api/health` or root to ensure 200 OK.
+
+2.  **API Verification (Happy Path)**:
+    *   **Requirement**: Before handing over, you MUST run a `curl` or script to verify the Happy Path of the implemented API.
+    *   **Log**: Output the result of this verification in the response.
+
+3.  **No Broken Code**:
+    *   If `php artisan` commands fail (migration, route list), you CANNOT mark the task as done. Fix the syntax error first.
+
+4.  **Full Permissions**:
+    *   You are authorized to use `php`, `composer`, `docker`, and other terminal commands to build, test, and run the project.

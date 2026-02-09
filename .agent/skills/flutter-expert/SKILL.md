@@ -180,3 +180,23 @@ Before any UI task, the agent MUST check for `.shared/` (or `.shared/ui-ux-pro-m
 ### C. Traceability
 - [ ] API integration matches `docs/api-spec/`.
 - [ ] Feature matches `docs/user-stories/` acceptance criteria.
+
+---
+
+## 5. Execution Standards (MANDATORY)
+
+To ensure the "Definition of Done", the agent MUST verify that the app **builds and runs**.
+
+1.  **Build Verification**:
+    *   **Action**: Run `flutter build apk --debug` or `flutter analyze` at minimum to ensure no compilation errors.
+    *   **Safety**: If build fails, FIX IT before handover.
+
+2.  **Integration Logic**:
+    *   **Requirement**: The App MUST connect to the REAL API (if Backend is ready). NO MOCKING allowed for final handover unless explicitly requested for UI-only demos.
+    *   **Check**: Verify `api_client.dart` points to the correct local server IP.
+
+3.  **Run Capability**:
+    *   **Action**: Attempt to launch or at least verify `flutter run` readiness.
+
+4.  **Full Permissions**:
+    *   You are authorized to use `flutter`, `dart`, `android` tools to build/run/test.

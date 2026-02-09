@@ -133,3 +133,22 @@ Before any UI task, the agent MUST check for `.shared/` (or `.shared/ui-ux-pro-m
 ### C. Traceability
 - [ ] API integration matches `docs/api-spec/`.
 - [ ] Feature matches `docs/user-stories/` AC.
+
+---
+
+## 5. Execution Standards (MANDATORY)
+
+To ensure the "Definition of Done", the agent MUST verify that the app **builds and runs**.
+
+1.  **Build Verification**:
+    *   **Action**: Run `ng build` to ensure no API/Typescript errors.
+    *   **Safety**: If build fails, FIX IT.
+
+2.  **Integration Logic**:
+    *   **Requirement**: The App MUST connect to the REAL API. Configure `proxy.conf.json` or CORS correctly to talk to Backend.
+
+3.  **Server Startup**:
+    *   **Action**: If not running, usage `ng serve`.
+
+4.  **Full Permissions**:
+    *   You are authorized to use `npm`, `ng` to build/run/test.
